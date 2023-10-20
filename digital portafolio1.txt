@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Builder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 60%;
+            margin: 0 auto;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        #resume {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Resume Builder</h1>
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="text" id="email" placeholder="Your Email">
+        <input type="text" id="phone" placeholder="Your Phone Number">
+        <textarea id="summary" placeholder="Summary"></textarea>
+        <button onclick="buildResume()">Build Resume</button>
+        <div id="resume"></div>
+    </div>
+
+    <script>
+        function buildResume() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var summary = document.getElementById("summary").value;
+
+            var resumeHTML = `
+                <h2>${name}</h2>
+                <p>Email: ${email}</p>
+                <p>Phone: ${phone}</p>
+                <h3>Summary</h3>
+                <p>${summary}</p>
+            `;
+
+            document.getElementById("resume").innerHTML = resumeHTML;
+        }
+    </script>
+</body>
+</html>
+
